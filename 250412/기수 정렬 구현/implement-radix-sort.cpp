@@ -16,17 +16,12 @@ void radix_sort(int arr[], int count) {
             int digit = posth % 10;
             arr_new[digit].push_back(arr[i]);
         }
-        int storage_arr[n];
         int c = 0;
-        for(int i =0; i<10; i++) {
-            for(int j = 0; j<arr_new[i].size(); j++) {
-                storage_arr[c] = arr_new[i].at(j);
+        for(int i =0; i< 10; i++) {
+            for(int j =0; j<arr_new[i].size(); j++) {
+                arr[c] = arr_new[i].at(j);
                 c++;
             }
-        }
-
-        for(int i =0; i< n; i++) {
-            arr[i] = storage_arr[i];
         }
 
     }
