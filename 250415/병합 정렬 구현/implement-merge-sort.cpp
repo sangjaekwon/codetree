@@ -34,7 +34,7 @@ void merge(int arr[], int low, int mid, int high) {
         j++;
         count++;
     }
-    for(int i =0; i<=high; i++) {
+    for(int i =low; i<=high; i++) {
         arr[i] = mergearr[i];
     }
 }
