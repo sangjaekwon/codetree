@@ -6,31 +6,31 @@ int n;
 int arr[100000];
 
 
-void merge(int arr2[], int low, int mid, int high) {
+void merge(int arr[], int low, int mid, int high) {
     int i = low;
     int j = mid + 1;
     int count = low;
     int mergearr[100000];
     while(i <= mid && j <= high) {
-        if(arr2[i] <= arr2[j]) {
-            mergearr[count] = arr2[i];
+        if(arr[i] <= arr[j]) {
+            mergearr[count] = arr[i];
             count++;
             i++;
         }
         else {
-            mergearr[count] = arr2[j];
+            mergearr[count] = arr[j];
             count++;
             j++;
         }
     
     }
     while(i <= mid) {
-        mergearr[count] = arr2[i];
+        mergearr[count] = arr[i];
         i++;
         count++;
     }
     while(j <= high) {
-        mergearr[count] = arr2[j];
+        mergearr[count] = arr[j];
         j++;
         count++;
     }
@@ -40,22 +40,15 @@ void merge(int arr2[], int low, int mid, int high) {
 }
 
 
-void merge_sort(int arr2[], int low, int high) {
+void merge_sort(int arr[], int low, int high) {
     if(low < high) {
         int mid = (low + high) / 2;
-        merge_sort(arr2, low, mid);
-        merge_sort(arr2, mid+1, high);
-        merge(arr2, low, mid, high);
+        merge_sort(arr, low, mid);
+        merge_sort(arr, mid+1, high);
+        merge(arr, low, mid, high);
     }
     
 }
-
-    
-
-
-
-
-
 
 int main() {
     cin >> n;
