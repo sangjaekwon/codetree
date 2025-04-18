@@ -1,4 +1,7 @@
 #include <iostream>
+#include <algorithm>
+
+#define MAX_N 100000
 
 using namespace std;
 
