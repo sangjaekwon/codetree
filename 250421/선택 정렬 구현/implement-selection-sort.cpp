@@ -29,7 +29,7 @@ int main() {
     }
 
     // Please write your code here.
-    selectSort(n-1);
+    selectSort(n);
 
 
     for (int i = 0; i < n; i++) {
