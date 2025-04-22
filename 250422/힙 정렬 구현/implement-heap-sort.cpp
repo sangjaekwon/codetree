@@ -5,17 +5,14 @@ using namespace std;
 int n;
 int arr[100001];
 
-
 void heapify(int n, int i) {
     int l = i*2;
     int r = i*2 +1;
     int largest = i;
-
-    if(l <= n && arr[l] > arr[largest]) {
+    if(l <=n && arr[l] > arr[largest]) {
         largest = l;
     }
-
-    if(r <= n && arr[r] > arr[largest]) {
+    if(r <=n && arr[r] > arr[largest]) {
         largest = r;
     }
 
@@ -26,15 +23,16 @@ void heapify(int n, int i) {
 }
 
 void heapSort() {
-
-    for(int i = n/2; i>0; i--) {
+    for(int i = n/2 ; i>0; i--) {
         heapify(n, i);
     }
 
-    for(int i = n; i>1; i--) {
-        swap(arr[i], arr[1]);
+    for(int i=n; i> 1; i--) {
+        swap(arr[1], arr[i]);
         heapify(i-1, 1);
     }
+
+
 }
 
 
@@ -44,10 +42,11 @@ int main() {
     for (int i = 1; i <= n; i++) {
         cin >> arr[i];
     }
-    heapSort();
-    // Please write your code here.
 
-    for(int i = 1; i<=n; i++) {
+    // Please write your code here.
+    heapSort();
+
+    for(int i = 1; i<= n; i++) {
         cout << arr[i] << " ";
     }
     return 0;
