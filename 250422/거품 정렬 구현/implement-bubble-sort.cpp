@@ -7,11 +7,11 @@ int n;
 int arr[100];
 
 
-void bubbleSort(int n) {
+void bubbleSort() {
     bool sorted = false;
     do {
         sorted = true;
-        for(int i = 0; i<n; i++) {
+        for(int i = 0; i<n-1; i++) {
             if(arr[i] > arr[i+1]) {
                 swap(arr[i], arr[i+1]);
                 sorted = false;
@@ -29,7 +29,7 @@ int main() {
     }
 
     // Please write your code here.
-    bubbleSort(n-1);
+    bubbleSort();
 
     for(int i =0; i< n; i++) {
         cout << arr[i] << " ";
